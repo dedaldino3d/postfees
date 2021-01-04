@@ -1,0 +1,11 @@
+{
+  "name": "postfees",
+  "version": "1.0.0",
+  "description": "An API to create posts and share with friends",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "Dedaldino3D",
+  "license": "MIT"
+}
