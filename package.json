@@ -4,16 +4,19 @@
   "description": "An API to create posts and share with friends",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "npm run test"
   },
   "author": "Dedaldino3D",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mongoose": "^5.11.10",
+    "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   }
 }
