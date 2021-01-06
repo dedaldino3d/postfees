@@ -1,12 +1,11 @@
-const Sequelize = require("sequelize");
-const sequelize = require("./index.js");
+const db = require("./index.js");
 
-const Posts = sequelize.define("posts", {
+const Posts = db.sequelize.define("posts", {
   title: {
-    type: Sequelize.STRING,
+    type: db.Sequelize.STRING,
   },
   content: {
-    type: Sequelize.TEXT,
+    type: db.Sequelize.TEXT,
   },
 });
 

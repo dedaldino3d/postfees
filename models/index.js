@@ -14,4 +14,7 @@ sequelize
     console.log("Authentication Failed");
   });
 
-module.exports = sequelize;
+module.exports = {
+  Sequelize: Sequelize,
+  sequelize: sequelize,
+};

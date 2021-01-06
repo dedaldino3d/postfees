@@ -1,15 +1,14 @@
-const Sequelize = require("sequelize");
-const sequelize = require("./index");
+const db = require("./index");
 
-const Users = sequelize.define("users", {
+const Users = db.sequelize.define("users", {
   username: {
-    type: Sequelize.STRING,
+    type: db.Sequelize.STRING,
   },
   email: {
-    type: Sequelize.STRING,
+    type: db.Sequelize.STRING,
   },
   age: {
-    type: Sequelize.TINYINT,
+    type: db.Sequelize.TINYINT,
   },
 });
 
