@@ -10,6 +10,9 @@ const Users = db.sequelize.define("users", {
   age: {
     type: db.Sequelize.TINYINT,
   },
+  password: {
+    type: db.Sequelize.STRING,
+  },
 });
 
 module.exports = Users;
