@@ -6,6 +6,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 
 const posts = require("./routes/posts");
+const categories = require("./routes/categories");
 const main = require("./routes");
 
 const app = express();
@@ -34,6 +35,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", main);
 app.use("/posts", posts);
+app.use("/categories", categories);
 
 // start server
 app.listen(8000, () => {

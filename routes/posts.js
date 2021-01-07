@@ -6,7 +6,7 @@ const Post = require("../models/posts");
 router.get("/", (req, res) => {
   Post.findAll({ order: [["createdAt", "DESC"]] })
     .then((posts) => {
-      res.render("home", {
+      res.render("posts/list", {
         posts: posts.map((p) => {
           return {
             id: p.id,
@@ -23,11 +23,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/posts", (req, res) => {
-  res.render("form");
-});
-
-router.post("/posts", (req, res) => {
+router.post("/", (req, res) => {
   Post.create({
     title: req.body.title,
     content: req.body.content,
@@ -40,7 +36,7 @@ router.post("/posts", (req, res) => {
     });
 });
 
-router.delete("/posts/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     await Post.destroy({ where: { id: req.params.id } });
     res.send("Post deleted");

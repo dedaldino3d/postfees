@@ -1,0 +1,21 @@
+{{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+{{else}}
+
+{{/each}}
+<h3>Update Category</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/categories/update" method="POST">
+            <input type="hidden" value={{category.id}}>
+            <label for="name">Name:</label>
+            <input type="text" value={{category.name}}id="name" class="form-control" name="name"
+                placeholder="Category name">
+            <label for="slug">Slug: </label>
+            <input type="text" value={{category.slug}}id="slug" class="form-control" name="slug"
+                placeholder="Category Slug">
+            <br>
+            <button type="submit" class="btn btn-success">Update Category</button>
+        </form>
+    </div>
+</div>

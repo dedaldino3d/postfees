@@ -1,0 +1,21 @@
+<h2>List of categories:</h2>
+<hr>
+<a href="/categories/new_category"><button class="btn btn-success">New Category</button></a>
+
+{{#each categories}}
+<div class="card mt-4">
+    <div class="card-body">
+        <h4>{{name}}</h4>
+        <small>{{slug}}</small><br>
+        <small>{{createdAt}}</small>
+        <div class="d-flex mt-4">
+            <a href="/categories/{{id}}/update"><button class="btn btn-success">Update</button></a>
+            <a href="/categories/{{id}}/delete"><button class="btn btn-danger">Delete</button></a>
+        </div>
+    </div>
+</div>
+{{else}}
+<div>
+    <p>No categories founded</p>
+</div>
+{{/each}}
