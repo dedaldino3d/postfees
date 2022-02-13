@@ -7,23 +7,21 @@ module.exports = function (passport) {
   passport.use(
     new localStrategy(
       { usernameField: "username" },
-      (username,
-      password,
-      (r) => {
+      (username, password, done) => {
         User.findOne({ where: { username: username } }).then((user) => {
           if (!user) {
-            return r(null, false, { message: "Account not found" });
+            return done(null, false, { message: "Account not found" });
           }
 
           bcrypt.compare(password, user.password, (err, succ) => {
             if (succ) {
-              return r(null, user);
+              return done(null, user);
             } else {
-              return r(null, false, { message: "Incorrect credentials" });
+              return done(null, false, { message: "Incorrect credentials" });
             }
           });
         });
-      })
+      }
     )
   );
 
